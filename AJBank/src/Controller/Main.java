@@ -51,7 +51,7 @@ public class Main {
 		ca.displaySpecificAccount(specificAccounts);
 		// affiche les comptes par ordre croissant de solde
 
-		// loadByJson(); // probleme de cast et de recuperation de données
+		loadByJson(); // probleme de cast et de recuperation de données
 
 	}
 
@@ -107,15 +107,15 @@ public class Main {
 				String dateString = (String) jsonObject.get("date");
 				LocalDate date = LocalDate.parse(dateString);
 
-				if (type == "credit") {
+				if (type.equals("credit")) {
 					Credit credit = new Credit(comment, identifier, amount, targetAccountNumber, effect, date);
 					flows.add(credit);
-				} else if (type == "debit") {
+				} else if (type.equals("debit")) {
 					Debit debit = new Debit(comment, identifier, amount, targetAccountNumber, effect, date);
 					flows.add(debit);
-				} else if (type == "transfer") {
+				} else if (type.equals("transfer")) {
 
-					long accountNumberIssuingLong = (long) jsonObject.get("accountNumberIssuing");
+					long accountNumberIssuingLong = (long) jsonObject.get("sourceAccountNumber");
 					int accountNumberIssuing = (int) accountNumberIssuingLong;
 					Transfert transfert = new Transfert(comment, identifier, amount, targetAccountNumber, effect, date,
 							accountNumberIssuing);
@@ -131,7 +131,6 @@ public class Main {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		System.out.println(flows);
 		return flows;
 	}
 

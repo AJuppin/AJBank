@@ -7,9 +7,4 @@ public class SavingsAccount extends Account {
 
 	}
 
-	public SavingsAccount() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
 }

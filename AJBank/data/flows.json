@@ -21,7 +21,7 @@
     "type": "credit",
     "comment": "A credit of 1500€ on all savings accounts in this same array",
     "identifier": 2,
-    "amount": 1500,
+    "amount": 1500.0,
     "targetAccountNumber": 2,
     "effect": true,
     "date": "2024-04-18"
@@ -30,7 +30,7 @@
     "type": "credit",
     "comment": "A credit of 1500€ on all savings accounts in this same array",
     "identifier": 4,
-    "amount": 1500,
+    "amount": 1500.0,
     "targetAccountNumber": 4,
     "effect": true,
     "date": "2024-04-18"
@@ -39,8 +39,8 @@
     "type": "debit",
     "comment": "A debit of 50€ from account n°1",
     "identifier": 5,
-    "amount": 50,
-    "sourceAccountNumber": 1,
+    "amount": 50.0,
+    "targetAccountNumber": 1,
     "effect": true,
     "date": "2024-04-18"
   },
@@ -48,9 +48,9 @@
     "type": "transfer",
     "comment": "A transfer of 50 € from account n ° 1 to account n ° 2",
     "identifier": 6,
-    "amount": 50,
-    "sourceAccountNumber": 1,
+    "amount": 50.0,
     "targetAccountNumber": 2,
+    "sourceAccountNumber": 1,
     "effect": true,
     "date": "2024-04-18"
   }
